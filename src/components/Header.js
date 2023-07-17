@@ -1,23 +1,11 @@
 import React from "react";
 
-const Header = ({ addTodo }) => {
-  const [inputValue, setInputValue] = useState("");
-
-
-  return <div>
-  <h1 className="text-3xl font-bold mb-4">To-Do List</h1>
-<div>
-    <input
-    type="text"
-    value={inputValue}
-    onChange={handleInputChange}
-    className="border border-gray-300 rounded-l px-4 py-2 w-full"
-    />
-  
-</div>
-
-
-  </div>;
+const Header = () => {
+  return (
+    <div className="flex items-center justify-between bg-blue-500 p-4">
+      <h1 className="text-white text-2xl font-bold">Todo App</h1>
+    </div>
+  );
 };
 
 export default Header;

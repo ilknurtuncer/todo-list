@@ -1,13 +1,27 @@
+import React, { useState } from 'react';
+import Header from './Header';
+import TodoInput from './TodoInput';
 
-import './App.css';
-import Header from './components/Header';
+const App = () => {
+  const [todos, setTodos] = useState([]);
 
-function App() {
+  const handleAddTodo = (newTodo) => {
+    setTodos([...todos, newTodo]);
+  };
+
   return (
-    <div className="App">
-      <Header/>
+    <div>
+      <Header />
+      <div className="container mx-auto mt-4">
+        <TodoInput addTodo={handleAddTodo} />
+        <ul className="list-disc pl-8">
+          {todos.map((todo, index) => (
+            <li key={index}>{todo}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
