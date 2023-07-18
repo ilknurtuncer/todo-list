@@ -4,8 +4,8 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="mt-4 mb-3">
-      <h1>Todo Uygulaması</h1>
+    <header className=" text-center text-danger m-6 mt-5 mb-5 ">
+      <h1>Todo List</h1>
     </header>
   );
 };

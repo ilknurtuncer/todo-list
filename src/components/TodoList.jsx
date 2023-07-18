@@ -24,14 +24,14 @@ const TodoList = ({ todos, addTodo, deleteTodo }) => {
 
   return (
     <div>
-      <InputGroup className="mb-3">
+      <InputGroup className="mb-3 w-50 d-flex mx-auto">
         <FormControl
           placeholder="Yapılacakları girin"
           value={todoText}
           onChange={handleInputChange}
         />
-        <Button variant="primary" onClick={handleAddTodo}>
-          Ekle
+        <Button className="input-group-text" onClick={handleAddTodo}>
+          ADD
         </Button>
       </InputGroup>
       <ul className="list-group">
