@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
-import Header from './Header';
-import TodoInput from './TodoInput';
+// App.js
 
-const App = () => {
+import React, { useState } from "react";
+import Header from "./Header";
+import TodoList from "./TodoList";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+function App() {
   const [todos, setTodos] = useState([]);
 
-  const handleAddTodo = (newTodo) => {
-    setTodos([...todos, newTodo]);
+  const addTodo = (todo) => {
+    setTodos([...todos, todo]);
+  };
+
+  const deleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
   };
 
   return (
-    <div>
+    <div className="container">
       <Header />
-      <div className="container mx-auto mt-4">
-        <TodoInput addTodo={handleAddTodo} />
-        <ul className="list-disc pl-8">
-          {todos.map((todo, index) => (
-            <li key={index}>{todo}</li>
-          ))}
-        </ul>
-      </div>
+      <TodoList todos={todos} addTodo={addTodo} deleteTodo={deleteTodo} />
     </div>
   );
-};
+}
 
 export default App;
